@@ -1,7 +1,129 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>千鹤FRP</title><meta name="copyright" content="千鹤FRP"><meta name="author" content="千鹤FRP"><meta name="keyword" content="内网穿透,FRP,千鹤FRP"><meta name="description" content="一个专注于稳定和高可靠性的FRP平台，为用户提供长久可用的内网穿透解决方案。"><meta property="og:description" content="一个专注于稳定和高可靠性的FRP平台，为用户提供长久可用的内网穿透解决方案。"><meta name="topic" content="千鹤FRP"><meta name="subject" content="千鹤FRP"><script defer="defer" src="/js/chunk-vendors.eb04d83a.js"></script><script defer="defer" src="/js/app.fea5097c.js"></script><link href="/css/chunk-vendors.10dd4e95.css" rel="stylesheet"><link href="/css/app.2bbabd89.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but vue2template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><div id="isIE" style="display: none;"><div class="text"><h1 style="text-align:center;">This application does not support Internet Explorer 11. Please upgrade your browser.</h1><h1 style="text-align:center;">本站无法使用IE进行访问, 请升级您的浏览器.</h1><h1 style="text-align:center;">Recommended to use the following browser for access:</h1><h1 style="text-align:center;">推荐使用以下浏览器进行访问:</h1><div class="buttonGroup"><h3><a href="https://www.google.cn/chrome/"><img src="chrome.png" alt=""/> Chorome </a>| <a href="https://www.microsoft.com/zh-cn/edge/download?form=MA13FJ"><img src="edge.svg" alt=""/> Edge</a></h3></div></div></div><script>// Check if the browser is IE11
-    if ('ActiveXObject' in window || 'MSInputMethodContext' in window) {
-      document.getElementById('isIE').style.display = 'flex';
-    }</script><style>#isIE{
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>千鹤FRP</title><meta name="copyright" content="千鹤FRP"><meta name="author" content="千鹤FRP"><meta name="keyword" content="内网穿透,FRP,千鹤FRP"><meta name="description" content="一个专注于稳定和高可靠性的FRP平台，为用户提供长久可用的内网穿透解决方案。"><meta property="og:description" content="一个专注于稳定和高可靠性的FRP平台，为用户提供长久可用的内网穿透解决方案。"><meta name="topic" content="千鹤FRP"><meta name="subject" content="千鹤FRP"><script defer="defer" src="/js/chunk-vendors.eb04d83a.js"></script><script defer="defer" src="/js/app.3b1905d1.js"></script><link href="/css/chunk-vendors.10dd4e95.css" rel="stylesheet"><link href="/css/app.25c1ea79.css" rel="stylesheet"></head><body><style>body,html{
+          margin: 0;
+          padding: 0;
+          font-size: 14px;
+          font-family: system-ui;
+          color: #000;
+          background-color: #FFF;
+          overflow: auto;
+          overflow-x: hidden;    
+      }
+      .siteloading{
+        text-align: center;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 99999;
+        background-color: #FFF;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 2rem;
+        font-family: system-ui;
+        opacity: 1;
+        transition: opacity .3s;
+      }
+      .siteloading .logoBox{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .siteloading .logoBox .logo{
+        width: 100px;
+      }
+      .siteloading .textBox{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .siteloading .textBox .icon{
+        height: 2.5rem;
+        margin: 20px;
+      }
+      .siteloading .textBox .text{
+        transition: opacity 0.8s ease;
+        opacity: 1;
+        min-width: 70%;
+        width: 70%;
+      }
+      .siteloading .textBox .text.hide{
+        opacity: 0;
+      }
+      .siteloading.hide{
+          opacity: 0;
+      }
+      .G-loading-animation{
+          animation: G-spin 1s linear infinite;
+      }
+      @keyframes G-spin {
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+              transform: rotate(-360deg);
+          }
+      }</style><div id="siteloading" class="siteloading"><div class="logoBox"><img class="logo" src="/logo.png"/></div><div class="textBox"><img class="icon G-loading-animation" src="/loading.svg"/><div class="text hide"></div></div></div><noscript><strong>We're sorry but vue2template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><div id="isIE" style="display: none;"><div class="text"><h1 style="text-align:center;">This application does not support Internet Explorer 11. Please upgrade your browser.</h1><h1 style="text-align:center;">本站无法使用IE进行访问, 请升级您的浏览器.</h1><h1 style="text-align:center;">Recommended to use the following browser for access:</h1><h1 style="text-align:center;">推荐使用以下浏览器进行访问:</h1><div class="buttonGroup"><h3><a href="https://www.google.cn/chrome/"><img src="chrome.png" alt=""/> Chorome </a>| <a href="https://www.microsoft.com/zh-cn/edge/download?form=MA13FJ"><img src="edge.svg" alt=""/> Edge</a></h3></div></div></div><script>function checkLoading(){
+          let text = [
+            "雁影翻飞，云起千鹤",
+            "风拂羽翼，逐光而行",
+            "水流轻漾，映鹤初醒",
+            "山色入画，千鹤待启",
+            "霞光映羽，天地共舞",
+            "晨露微光，鹤影悠然",
+            "夜月沉沉，羽影婆娑",
+            "松间清响，鹤鸣远山",
+            "梧桐细雨，羽声点点",
+            "青山隐隐，千鹤归巢",
+            "风摇竹影，羽舞悠扬",
+            "流云轻荡，鹤行天地",
+            "水光潋滟，羽影翩翩",
+            "晨曦微露，千鹤初醒",
+            "霜叶飘零，羽舞轻扬",
+            "云间鹤影，逐风而行",
+            "竹林深处，鹤鸣悠远",
+            "暮色渐染，千鹤归途"
+          ];
+
+          let siteloading = document.getElementById("siteloading");
+          if (!siteloading) return;
+          let loadingText = siteloading.querySelector(".text");
+          if (!loadingText) return;
+          siteloading.style.display = "flex";
+          let index = 0;
+          loadingText.innerHTML = text[index];
+          loadingText.classList.remove("hide");
+          let timer = setInterval(() => {
+            loadingText.classList.add("hide");
+            setTimeout(() => {
+              index = (index + 1) % text.length;
+              loadingText.innerHTML = text[index];
+              loadingText.classList.remove("hide");
+            }, 800);
+          }, 5000); // 每 5 秒切换一次
+        window.onload = () => {
+          clearInterval(timer);
+          siteloading.classList.add("hide");
+          setTimeout(() => {
+            siteloading.remove();
+          }, 300);        
+          console.log("所有资源已加载完毕");
+        };
+      }
+      // Check if the browser is IE11
+      if ('ActiveXObject' in window || 'MSInputMethodContext' in window) {
+        document.getElementById('isIE').style.display = 'flex';
+      }
+      else{
+        checkLoading();
+      }</script><style>#isIE{
         width: 100%;
         height: 80vh;
         display: flex;
